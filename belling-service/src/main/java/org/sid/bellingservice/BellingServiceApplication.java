@@ -33,7 +33,7 @@ public class BellingServiceApplication {
                             ProductRsetClient productRsetClient){
         return args -> {
             Collection<Product> products=productRsetClient.allProducts().getContent();
-           Long customerId=1L;
+            Long customerId=1L;
             Customer customer=customerRestClient.findCustomerById(customerId);
             if (customer==null)throw new RuntimeException("Customer not found");
             Bill bill=new Bill();
